@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Formatters">
+      <UniqueIdentifier>{83b60c41-14cf-4af0-8d32-df626d330ae4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Converters">
+      <UniqueIdentifier>{5be7d48c-5657-4d4e-967f-45001c65a67a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Appenders">
+      <UniqueIdentifier>{d1e4d859-71ef-4666-b851-77692010e6b9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\plog\Init.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Log.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Logger.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Record.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Severity.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Util.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\WinApi.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Formatters\CsvFormatter.h">
+      <Filter>Source Files\Formatters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Formatters\FuncMessageFormatter.h">
+      <Filter>Source Files\Formatters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Formatters\MessageOnlyFormatter.h">
+      <Filter>Source Files\Formatters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Formatters\TxtFormatter.h">
+      <Filter>Source Files\Formatters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Converters\NativeEOLConverter.h">
+      <Filter>Source Files\Converters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Converters\UTF8Converter.h">
+      <Filter>Source Files\Converters</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Appenders\AndroidAppender.h">
+      <Filter>Source Files\Appenders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Appenders\ColorConsoleAppender.h">
+      <Filter>Source Files\Appenders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Appenders\ConsoleAppender.h">
+      <Filter>Source Files\Appenders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Appenders\DebugOutputAppender.h">
+      <Filter>Source Files\Appenders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Appenders\EventLogAppender.h">
+      <Filter>Source Files\Appenders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Appenders\IAppender.h">
+      <Filter>Source Files\Appenders</Filter>
+    </ClInclude>
+    <ClInclude Include="include\plog\Appenders\RollingFileAppender.h">
+      <Filter>Source Files\Appenders</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
