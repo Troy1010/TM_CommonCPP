@@ -2,6 +2,7 @@
 Release
 Debug
 .vs
+packages
 
 # Prerequisites
 *.d
