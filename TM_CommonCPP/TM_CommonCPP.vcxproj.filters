@@ -24,7 +24,6 @@
     <ClInclude Include="include\TM_CommonCPP\Properties.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TM_CommonCPP_Main.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
