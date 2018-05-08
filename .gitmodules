@@ -1,3 +1,3 @@
-[submodule "plog"]
-	path = plog
+[submodule "submodules/plog"]
+	path = submodules/plog
 	url = https://github.com/SergiusTheBest/plog.git
