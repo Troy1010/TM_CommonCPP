@@ -11,8 +11,8 @@
     <copyright>Copyright 2018</copyright>
   </metadata>
   <files>
-	<file src="TM_CommonCPP\include\TM_CommonCPP\*.*" target="\lib\native\include\TM_CommonCPP" />
-	<file src="plog\include\plog\*.*" target="\lib\native\include\plog" />
-	<file src="TM_CommonCPP.props" target="\build\native\TM_CommonCPP.props" />
+	<file src="TM_CommonCPP.targets" target="\build\native\TM_CommonCPP.targets" />
+	<file src="..\TM_CommonCPP\include\TM_CommonCPP\*.*" target="\lib\native\include\TM_CommonCPP" />
+	<file src="..\submodules\plog\include\plog\*.*" target="\lib\native\include\plog" />
   </files>
 </package>
