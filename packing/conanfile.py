@@ -3,7 +3,7 @@ from conans import ConanFile
 class TM_CommonCPP_Conan(ConanFile):
     name = "TM_CommonCPP"
     version = "0.1"
-    license = "None"
+    license = "MIT"
     url = "https://github.com/Troy1010/TM_CommonCPP"
     description = "TMinus1010's common C++ library."
 
@@ -17,6 +17,3 @@ class TM_CommonCPP_Conan(ConanFile):
 
     def package_info(self):
         self.cpp_info.includedirs = ['include']
-
-    #def deploy(self):
-    #    self.copy("*", src="include/", dst="include/")
