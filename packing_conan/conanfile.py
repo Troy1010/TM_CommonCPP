@@ -1,20 +1,22 @@
 from conans import ConanFile
 
-
 class TM_CommonCPP_Conan(ConanFile):
-    name = "OBSEPluginDevPackage"
-    version = "1.2"
+    name = "TM_CommonCPP"
+    version = "0.1"
     license = "None"
     url = "https://github.com/Troy1010/TM_CommonCPP"
     description = "TMinus1010's common C++ library."
 
     def source(self):
-        self.run("git clone https://github.com/memsharded/hello.git")
-        self.run("cd hello && git checkout static_shared")
+        self.run("git clone https://github.com/Troy1010/TM_CommonCPP.git")
+        self.run("git clone https://github.com/SergiusTheBest/plog.git")
 
     def package(self):
-        self.copy("*.h", src="../TM_CommonCPP/include", dst="include")
-        self.copy("*.h", src="../submodules/plog/include", dst="include")
+        self.copy("*.h", dst="include", src="TM_CommonCPP/TM_CommonCPP/include")
+        self.copy("*.h", dst="include", src="plog/include")
 
     def package_info(self):
         self.cpp_info.includedirs = ['include']
+
+    #def deploy(self):
+    #    self.copy("*", src="include/", dst="include/")
