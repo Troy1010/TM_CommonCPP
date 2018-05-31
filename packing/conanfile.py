@@ -8,7 +8,7 @@ class TM_CommonCPP_Conan(ConanFile):
     description = "TMinus1010's common C++ library."
 
     def source(self):
-        self.run("git clone https://github.com/Troy1010/TM_CommonCPP.git")
+        self.run("git clone -b beta https://github.com/Troy1010/TM_CommonCPP.git")
         self.run("git clone https://github.com/SergiusTheBest/plog.git")
 
     def package(self):
