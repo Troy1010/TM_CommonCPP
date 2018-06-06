@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{0aa2e6a0-392f-4b43-b8ae-a77dbbfe8951}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -24,24 +21,12 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\TM_CommonCPP\Properties.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TM_CommonCPP\Misc.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TM_CommonCPP\Narrate.h">
-      <Filter>Main</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TM_CommonCPP.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="TM_CommonCPP_ConsoleTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
