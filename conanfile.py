@@ -1,4 +1,20 @@
 from conans import ConanFile
+import xml.etree.ElementTree
+import os, sys, ctypes
+import VisualStudioAutomation as VS
+import TM_CommonPy as TM
+
+if __name__ == "__main__":
+    try:
+        #---Open
+        sProj = os.path.join("TM_CommonCPP","TM_CommonCPP.vcxproj")
+        #---
+        TM.Run("conan create . Troy1010/channel -pr conanprofile_OBSEPlugin")
+        VS.SetTMDefaultSettings(sProj)
+        #VS.IntegrateProps(sProj,"conanbuildinfo.props")
+    except:
+        ctypes.windll.user32.MessageBoxW(0, "Exception occured.", __file__, 1)
+        raise
 
 class TM_CommonCPP_Conan(ConanFile):
     name = "TM_CommonCPP"
