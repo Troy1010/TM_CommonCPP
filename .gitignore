@@ -4,6 +4,7 @@ Debug
 .vs
 packages
 bin/*
+Log_*
 
 # Prerequisites
 *.d
