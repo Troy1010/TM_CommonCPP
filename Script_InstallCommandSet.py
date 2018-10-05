@@ -13,9 +13,15 @@ def QueActions(vCommandSet):
     #---TMDefaultSettings
     vCommandSet.Que((VS.SetTMDefaultVSSettings.Do,VS.SetTMDefaultVSSettings.Undo),sProj)
     vCommandSet.Que((VS.SetTMDefaultVSSettings.Do,VS.SetTMDefaultVSSettings.Undo),sLogTestsProj)
+    #---Integrate Conan-installed packages
+    for sRoot in TM.GetDependencyRoots("conanbuildinfo.txt"):
+        sPossibleRecommendedIntegrationPath = os.path.join(sRoot,"RecommendedIntegration.py")
+        if os.path.isfile(sPossibleRecommendedIntegrationPath):
+            vCommandSet.QueScript(sPossibleRecommendedIntegrationPath,[sRoot,sLogTestsProj,sSln])
+    vCommandSet.Que([VS.IntegrateProps,VS.IntegrateProps_Undo],[sLogTestsProj,"conanbuildinfo.props"])
 
-##region DoubleclickEvent
 try:
+    TM.Run("conan install . -pr conanprofile_OBSEPlugin")
     vCommandSet = TM.CommandSet.TryLoad()
     QueActions(vCommandSet)
     print("Executing CommandSet..")
@@ -26,4 +32,3 @@ except Exception as e:
     sys.exit(1)
 if bPause:
     TM.DisplayDone()
-##endregion
