@@ -1,0 +1,23 @@
+[settings]
+
+
+[requires]
+    Plog/0.1
+
+[options]
+
+
+[full_settings]
+
+
+[full_requires]
+    Plog/0.1@Troy1010/channel:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
+
+[full_options]
+
+
+[recipe_hash]
+
+
+[env]
+
