@@ -1,6 +1,7 @@
 ##region Settings
 bPause = True
 sProj = "TM_CommonCPP/TM_CommonCPP.vcxproj"
+sLogTestsProj = "TM_CommonCPP_LogTests/TM_CommonCPP_LogTests.vcxproj"
 ##endregion
 ##region Imports
 import os, sys, traceback
@@ -11,6 +12,7 @@ import VisualStudioAutomation as VS
 def QueActions(vCommandSet):
     #---TMDefaultSettings
     vCommandSet.Que((VS.SetTMDefaultVSSettings.Do,VS.SetTMDefaultVSSettings.Undo),sProj)
+    vCommandSet.Que((VS.SetTMDefaultVSSettings.Do,VS.SetTMDefaultVSSettings.Undo),sLogTestsProj)
 
 ##region DoubleclickEvent
 try:
@@ -20,13 +22,8 @@ try:
     vCommandSet.Execute()
     vCommandSet.Save()
 except Exception as e:
-    print("====================================================================")
-    print("Traceback (most recent call last):")
-    traceback.print_tb(e.__traceback__)
-    print(e)
-    os.system('pause')
+    TM.DisplayException(e)
     sys.exit(1)
 if bPause:
-    print("\n\t\t\tDone\n")
-    os.system('pause')
+    TM.DisplayDone()
 ##endregion
