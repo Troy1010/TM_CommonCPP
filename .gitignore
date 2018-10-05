@@ -3,6 +3,7 @@ Release
 Debug
 .vs
 packages
+bin/*
 
 # Prerequisites
 *.d
