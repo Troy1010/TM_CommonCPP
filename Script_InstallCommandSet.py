@@ -4,7 +4,7 @@ sProj = "TM_CommonCPP/TM_CommonCPP.vcxproj"
 sLogTestsProj = "TM_CommonCPP_LogTests/TM_CommonCPP_LogTests.vcxproj"
 ##endregion
 ##region Imports
-import os, sys, traceback
+import os, sys
 import TM_CommonPy as TM
 import VisualStudioAutomation as VS
 ##endregion
