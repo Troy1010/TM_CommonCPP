@@ -20,21 +20,30 @@ private:
 	}
 
 public:
+#pragma region Narrate Overrides
 	static std::string Narrate(int iInt)
 	{
 		return Narrate_Stringable<int>(iInt);
+	}
+	static std::string Narrate(const char vCString[])
+	{
+		return std::string(vCString);
 	}
 	static std::string Narrate(std::set<int> cSet)
 	{
 		return Narrate_Collection<std::set<int>>(cSet);
 	}
+	/*static std::string Narrate(std::set<bool> bBool)
+	{
+		return Narrate_Stringable<std::set<bool>>(bBool);
+	}*/
+#pragma endregion
 
 	template<typename T>
 	static std::string Narrate_Stringable(T vVar)
 	{
 		return std::to_string(vVar);
 	}
-
 	template<typename T>
 	static std::string Narrate_Collection(T vVar)
 	{
