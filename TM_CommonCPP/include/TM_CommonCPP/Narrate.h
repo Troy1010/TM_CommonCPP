@@ -29,11 +29,18 @@ namespace TM_CommonCPP
 			return std::to_string(vVar);
 		}
 		template<typename T>
+		static std::string Narrate_StringStreamable(T vVar)
+		{
+			std::ostringstream ss;
+			ss << vVar;
+			return ss.str();
+		}
+		template<typename T>
 		static std::string Narrate_Collection(T vVar)
 		{
 			std::string s = "Collection..";
 			for (auto vItem : vVar) {
-				s += "\r\n" + __Indent() + Narrate_Stringable(vItem);
+				s += "\r\n" + __Indent() + TM_CommonCPP::Narrate(vItem);
 			}
 			return s;
 		}
@@ -68,6 +75,10 @@ namespace TM_CommonCPP
 	static std::string Narrate(std::string sString)
 	{
 		return sString;
+	}
+	static std::string Narrate(float fFloat)
+	{
+		return Narrator::Narrate_StringStreamable(fFloat);
 	}
 #pragma endregion
 }
