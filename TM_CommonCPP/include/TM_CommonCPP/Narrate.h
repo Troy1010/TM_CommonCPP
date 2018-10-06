@@ -6,24 +6,45 @@
 #include "Misc.h"
 #include <iostream>
 
-class Narrator
+namespace TM_CommonCPP
 {
-private:
-	static int iIndent;
-	static std::string sIndent;
-	Narrator() {}
-	~Narrator() {}
-
-	static std::string __Indent()
+	class Narrator
 	{
-		return string_repeat(iIndent, sIndent);
-	}
+	private:
+		static int iIndent;
+		static std::string sIndent;
+		Narrator() {}
+		~Narrator() {}
 
-public:
+		static std::string __Indent()
+		{
+			return string_repeat(iIndent, sIndent);
+		}
+
+	public:
+
+		template<typename T>
+		static std::string Narrate_Stringable(T vVar)
+		{
+			return std::to_string(vVar);
+		}
+		template<typename T>
+		static std::string Narrate_Collection(T vVar)
+		{
+			std::string s = "Collection..";
+			for (auto vItem : vVar) {
+				s += "\r\n" + __Indent() + Narrate_Stringable(vItem);
+			}
+			return s;
+		}
+	};
+	int Narrator::iIndent = 5;
+	std::string Narrator::sIndent = " ";
+
 #pragma region Narrate Overloads
 	static std::string Narrate(int iInt)
 	{
-		return Narrate_Stringable<int>(iInt);
+		return Narrator::Narrate_Stringable<int>(iInt);
 	}
 	static std::string Narrate(const char vCString[])
 	{
@@ -31,7 +52,7 @@ public:
 	}
 	static std::string Narrate(std::set<int> cSet)
 	{
-		return Narrate_Collection<std::set<int>>(cSet);
+		return Narrator::Narrate_Collection<std::set<int>>(cSet);
 	}
 	static std::string Narrate(bool bBool)
 	{
@@ -49,21 +70,8 @@ public:
 		return sString;
 	}
 #pragma endregion
+}
 
-	template<typename T>
-	static std::string Narrate_Stringable(T vVar)
-	{
-		return std::to_string(vVar);
-	}
-	template<typename T>
-	static std::string Narrate_Collection(T vVar)
-	{
-		std::string s = "Collection..";
-		for (auto vItem : vVar) {
-			s += "\r\n" + __Indent() + Narrate_Stringable(vItem);
-		}
-		return s;
-	}
-};
-int Narrator::iIndent = 5;
-std::string Narrator::sIndent = " ";
+
+
+
