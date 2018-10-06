@@ -20,7 +20,7 @@ private:
 	}
 
 public:
-#pragma region Narrate Overrides
+#pragma region Narrate Overloads
 	static std::string Narrate(int iInt)
 	{
 		return Narrate_Stringable<int>(iInt);
@@ -33,10 +33,17 @@ public:
 	{
 		return Narrate_Collection<std::set<int>>(cSet);
 	}
-	/*static std::string Narrate(std::set<bool> bBool)
+	static std::string Narrate(bool bBool)
 	{
-		return Narrate_Stringable<std::set<bool>>(bBool);
-	}*/
+		if (bBool)
+		{
+			return std::string("true");
+		}
+		else
+		{
+			return std::string("false");
+		}
+	}
 #pragma endregion
 
 	template<typename T>
