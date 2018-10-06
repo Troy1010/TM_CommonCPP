@@ -33,7 +33,7 @@
     <ClInclude Include="include\TM_CommonCPP\Narrate.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="PlogFormatter.h">
+    <ClInclude Include="include\TM_CommonCPP\PlogFormatter.h">
       <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
