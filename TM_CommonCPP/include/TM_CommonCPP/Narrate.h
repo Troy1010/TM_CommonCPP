@@ -44,6 +44,10 @@ public:
 			return std::string("false");
 		}
 	}
+	static std::string Narrate(std::string sString)
+	{
+		return sString;
+	}
 #pragma endregion
 
 	template<typename T>
