@@ -33,6 +33,9 @@
     <ClInclude Include="include\TM_CommonCPP\Narrate.h">
       <Filter>Main</Filter>
     </ClInclude>
+    <ClInclude Include="PlogFormatter.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
