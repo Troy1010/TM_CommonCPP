@@ -2,6 +2,7 @@
 
 #include "plog/Log.h"
 
+
 namespace plog
 {
 	class MyFormatter
