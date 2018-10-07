@@ -50,10 +50,10 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Misc.cpp">
+    <ClCompile Include="src\Narrate.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Narrate.cpp">
+    <ClCompile Include="src\Misc.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
