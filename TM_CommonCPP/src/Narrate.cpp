@@ -5,7 +5,7 @@ namespace TM_CommonCPP
 {
 	int Narrator::iIndent = 5;
 	std::string Narrator::sIndent = " ";
-	std::string TMCommonCPP_API Narrator::__Indent()
+	std::string Narrator::__Indent()
 	{
 		return string_repeat(iIndent, sIndent);
 	}
