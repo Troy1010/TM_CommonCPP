@@ -12,7 +12,7 @@ class TM_CommonCPP_Conan(ConanFile):
     exports = "RecommendedIntegration.py"
 
     def source(self):
-        self.run("git clone -b beta https://github.com/Troy1010/TM_CommonCPP.git")
+        self.run("git clone -b dev https://github.com/Troy1010/TM_CommonCPP.git")
 
     def package(self):
         self.copy("RecommendedIntegration.py")
