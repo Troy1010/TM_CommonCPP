@@ -169,7 +169,7 @@
     <ClCompile Include="TM_CommonCPP_LogTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TM_CommonCPP_StaticLib\TM_CommonCPP_StaticLib.vcxproj">
+    <ProjectReference Include="..\TM_CommonCPP\TM_CommonCPP_Lib.vcxproj">
       <Project>{434875ef-3f94-44dd-bfc5-93d69c0de9a2}</Project>
       <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
     </ProjectReference>

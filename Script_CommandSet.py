@@ -1,8 +1,8 @@
 ##region Settings
 bPause = True
-sProj = "TM_CommonCPP/TM_CommonCPP.vcxproj"
+sProjDll = "TM_CommonCPP/TM_CommonCPP.vcxproj"
 sLogTestsProj = "TM_CommonCPP_LogTests/TM_CommonCPP_LogTests.vcxproj"
-sProjStaticLib = "TM_CommonCPP_StaticLib/TM_CommonCPP_StaticLib.vcxproj"
+sProjStaticLib = "TM_CommonCPP_StaticLib/TM_CommonCPP_Lib.vcxproj"
 ##endregion
 ##region Imports
 import os, sys
@@ -15,7 +15,7 @@ def QueActions(vCommandSet):
     for sProj_ in (sProj,sLogTestsProj,sProjStaticLib):
         vCommandSet.Que((VS.SetTMDefaultVSSettings.Do,VS.SetTMDefaultVSSettings.Undo),sProj_)
     #---Integrate Conan-installed packages
-    for sProj_ in (sProj,sLogTestsProj):
+    for sProj_ in (sProj,sLogTestsProj,sProjStaticLib):
         for sRoot in TM.GetDependencyRoots("conanbuildinfo.txt"):
             sPossibleRecommendedIntegrationPath = os.path.join(sRoot,"RecommendedIntegration.py")
             if os.path.isfile(sPossibleRecommendedIntegrationPath):
