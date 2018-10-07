@@ -37,9 +37,9 @@ namespace TM_CommonCPP
 	{
 		return sString;
 	}
-	/*std::string Narrate(float fFloat)
+	std::string Narrate(float fFloat)
 	{
 		return Narrator::Narrate_StringStreamable(fFloat);
-	}*/
+	}
 #pragma endregion
 }
