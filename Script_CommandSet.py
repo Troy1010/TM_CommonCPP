@@ -2,6 +2,7 @@
 bPause = True
 sProj = "TM_CommonCPP/TM_CommonCPP.vcxproj"
 sLogTestsProj = "TM_CommonCPP_LogTests/TM_CommonCPP_LogTests.vcxproj"
+sProjStaticLib = "TM_CommonCPP_StaticLib/TM_CommonCPP_StaticLib.vcxproj"
 ##endregion
 ##region Imports
 import os, sys
@@ -11,7 +12,7 @@ import VisualStudioAutomation as VS
 
 def QueActions(vCommandSet):
     #---TMDefaultSettings
-    for sProj_ in (sProj,sLogTestsProj):
+    for sProj_ in (sProj,sLogTestsProj,sProjStaticLib):
         vCommandSet.Que((VS.SetTMDefaultVSSettings.Do,VS.SetTMDefaultVSSettings.Undo),sProj_)
     #---Integrate Conan-installed packages
     for sProj_ in (sProj,sLogTestsProj):
