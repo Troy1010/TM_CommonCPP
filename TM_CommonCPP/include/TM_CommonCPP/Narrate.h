@@ -6,6 +6,12 @@
 #include "Misc.h"
 #include <iostream>
 
+#ifdef TMCOMMONCPP_EXPORTS
+#define TMCommonCPP_API __declspec(dllexport)   
+#else  
+#define TMCommonCPP_API __declspec(dllimport)   
+#endif 
+
 namespace TM_CommonCPP
 {
 	class Narrator
@@ -15,60 +21,38 @@ namespace TM_CommonCPP
 		static std::string sIndent;
 		Narrator() {}
 		~Narrator() {}
-
-		static std::string __Indent()
-		{
-			return string_repeat(iIndent, sIndent);
-		}
-
+		static std::string __Indent();
 	public:
-
 		template<typename T>
 		static std::string Narrate_Stringable(T vVar)
 		{
 			return std::to_string(vVar);
 		}
 		template<typename T>
+		static std::string Narrate_StringStreamable(T vVar)
+		{
+			std::ostringstream ss;
+			ss << vVar;
+			return ss.str();
+		}
+		template<typename T>
 		static std::string Narrate_Collection(T vVar)
 		{
 			std::string s = "Collection..";
 			for (auto vItem : vVar) {
-				s += "\r\n" + __Indent() + Narrate_Stringable(vItem);
+				s += "\r\n" + __Indent() + TM_CommonCPP::Narrate(vItem);
 			}
 			return s;
 		}
 	};
-	int Narrator::iIndent = 5;
-	std::string Narrator::sIndent = " ";
 
 #pragma region Narrate Overloads
-	static std::string Narrate(int iInt)
-	{
-		return Narrator::Narrate_Stringable<int>(iInt);
-	}
-	static std::string Narrate(const char vCString[])
-	{
-		return std::string(vCString);
-	}
-	static std::string Narrate(std::set<int> cSet)
-	{
-		return Narrator::Narrate_Collection<std::set<int>>(cSet);
-	}
-	static std::string Narrate(bool bBool)
-	{
-		if (bBool)
-		{
-			return std::string("true");
-		}
-		else
-		{
-			return std::string("false");
-		}
-	}
-	static std::string Narrate(std::string sString)
-	{
-		return sString;
-	}
+	std::string TMCommonCPP_API Narrate(int iInt);
+	std::string TMCommonCPP_API Narrate(const char vCString[]);
+	std::string TMCommonCPP_API Narrate(std::set<int> cSet);
+	std::string TMCommonCPP_API Narrate(bool bBool);
+	std::string TMCommonCPP_API Narrate(std::string sString);
+	std::string TMCommonCPP_API Narrate(float fFloat);
 #pragma endregion
 }
 
