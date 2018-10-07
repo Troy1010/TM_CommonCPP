@@ -15,3 +15,8 @@ std::string string_repeat(int n, std::string s) {
 		os << s;
 	return os.str();
 }
+
+std::string Hello()
+{
+	return std::string("Hello!");
+}
