@@ -7,10 +7,11 @@
 #include <iostream>
 
 #ifdef TMCOMMONCPP_EXPORTS
-#define TMCommonCPP_API __declspec(dllexport)   
-#else  
-#define TMCommonCPP_API __declspec(dllimport)   
-#endif 
+#define TMCommonCPP_API __declspec(dllexport)
+#else
+//#define TMCommonCPP_API __declspec(dllimport)
+#define TMCommonCPP_API
+#endif
 
 namespace TM_CommonCPP
 {

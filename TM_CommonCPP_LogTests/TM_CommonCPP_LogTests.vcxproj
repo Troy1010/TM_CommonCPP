@@ -171,7 +171,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TM_CommonCPP\TM_CommonCPP_Lib.vcxproj">
       <Project>{434875ef-3f94-44dd-bfc5-93d69c0de9a2}</Project>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
