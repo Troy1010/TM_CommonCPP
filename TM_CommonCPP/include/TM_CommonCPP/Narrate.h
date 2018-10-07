@@ -21,7 +21,7 @@ namespace TM_CommonCPP
 		static std::string sIndent;
 		Narrator() {}
 		~Narrator() {}
-		static std::string __Indent();
+		static std::string TMCommonCPP_API __Indent();
 	public:
 		template<typename T>
 		static std::string Narrate_Stringable(T vVar)
@@ -40,7 +40,7 @@ namespace TM_CommonCPP
 		{
 			std::string s = "Collection..";
 			for (auto vItem : vVar) {
-				s += "\r\n" + __Indent() + TM_CommonCPP::Narrate(vItem);
+				s += "\r\n" + TM_CommonCPP::Narrator::__Indent() + TM_CommonCPP::Narrate(vItem);
 			}
 			return s;
 		}
