@@ -18,17 +18,13 @@ namespace TM_CommonCPP
 	class Narrator
 	{
 	private:
-		static int iIndent;
 		static std::string sIndent;
 		Narrator() {}
 		~Narrator() {}
-		static std::string TMCommonCPP_API __Indent();
 	public:
-		template<typename T>
-		static std::string Narrate_Stringable(T vVar)
-		{
-			return std::to_string(vVar);
-		}
+		static int TMCommonCPP_API iIndent;
+		static std::string TMCommonCPP_API Indent();
+
 		template<typename T>
 		static std::string Narrate_StringStreamable(T vVar)
 		{
@@ -40,9 +36,22 @@ namespace TM_CommonCPP
 		static std::string Narrate_Collection(T vVar)
 		{
 			std::string s = "Collection..";
+			iIndent++;
 			for (auto vItem : vVar) {
-				s += "\r\n" + TM_CommonCPP::Narrator::__Indent() + TM_CommonCPP::Narrate(vItem);
+				s += "\n" + TM_CommonCPP::Narrator::Indent() + TM_CommonCPP::Narrate(vItem);
 			}
+			iIndent--;
+			return s;
+		}
+		template<typename T>
+		static std::string Narrate_2dCollection(T vVar)
+		{
+			std::string s = "Collection..";
+			iIndent++;
+			for (auto vItem : vVar) {
+				s += "\n" + TM_CommonCPP::Narrator::Indent() + TM_CommonCPP::Narrator::Narrate_Collection(vItem);
+			}
+			iIndent--;
 			return s;
 		}
 	};
@@ -54,6 +63,7 @@ namespace TM_CommonCPP
 	std::string TMCommonCPP_API Narrate(bool bBool);
 	std::string TMCommonCPP_API Narrate(std::string sString);
 	std::string TMCommonCPP_API Narrate(float fFloat);
+	std::string TMCommonCPP_API Narrate(std::set<std::set<int>> c2dSet);
 #pragma endregion
 }
 

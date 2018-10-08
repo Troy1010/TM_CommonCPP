@@ -3,16 +3,16 @@
 
 namespace TM_CommonCPP
 {
-	int Narrator::iIndent = 5;
+	int Narrator::iIndent = 0;
 	std::string Narrator::sIndent = " ";
-	std::string Narrator::__Indent()
+	std::string Narrator::Indent()
 	{
 		return string_repeat(iIndent, sIndent);
 	}
 #pragma region Narrate Overloads
 	std::string Narrate(int iInt)
 	{
-		return Narrator::Narrate_Stringable<int>(iInt);
+		return std::to_string(iInt);
 	}
 	std::string Narrate(const char vCString[])
 	{
@@ -20,7 +20,11 @@ namespace TM_CommonCPP
 	}
 	std::string Narrate(std::set<int> cSet)
 	{
-		return Narrator::Narrate_Collection<std::set<int>>(cSet);
+		return Narrator::Narrate_Collection(cSet);
+	}
+	std::string Narrate(std::set<std::set<int>> c2dSet)
+	{
+		return Narrator::Narrate_2dCollection(c2dSet);
 	}
 	std::string Narrate(bool bBool)
 	{
