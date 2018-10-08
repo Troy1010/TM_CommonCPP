@@ -35,19 +35,20 @@ namespace TM_CommonCPP
 		template<typename T>
 		static std::string Narrate_Collection(T vVar)
 		{
+			std::ostringstream ss;
 			//---Empty Collection
 			if (vVar.size() == 0)
 			{
 				return std::string("<Empty Collection>");
 			}
 			//---
-			std::string s = "Collection..";
+			ss << "Collection(Size:" << vVar.size() << ")..";
 			iIndent++;
 			for (auto vItem : vVar) {
-				s += "\n" + TM_CommonCPP::Narrator::Indent() + TM_CommonCPP::Narrate(vItem);
+				ss << "\n" + TM_CommonCPP::Narrator::Indent() << TM_CommonCPP::Narrate(vItem);
 			}
 			iIndent--;
-			return s;
+			return ss.str();
 		}
 		template<typename T>
 		static std::string Narrate_2dCollection(T vVar)
