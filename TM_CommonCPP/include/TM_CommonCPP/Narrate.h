@@ -35,6 +35,12 @@ namespace TM_CommonCPP
 		template<typename T>
 		static std::string Narrate_Collection(T vVar)
 		{
+			//---Empty Collection
+			if (vVar.size() == 0)
+			{
+				return std::string("<Empty Collection>");
+			}
+			//---
 			std::string s = "Collection..";
 			iIndent++;
 			for (auto vItem : vVar) {
