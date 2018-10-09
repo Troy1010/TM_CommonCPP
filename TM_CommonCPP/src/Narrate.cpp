@@ -45,5 +45,9 @@ namespace TM_CommonCPP
 	{
 		return Narrator::Narrate_StringStreamable(fFloat);
 	}
+	std::string Narrate(double vDouble)
+	{
+		return Narrator::Narrate_StringStreamable(vDouble);
+	}
 #pragma endregion
 }

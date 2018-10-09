@@ -71,6 +71,7 @@ namespace TM_CommonCPP
 	std::string TMCommonCPP_API Narrate(std::string sString);
 	std::string TMCommonCPP_API Narrate(float fFloat);
 	std::string TMCommonCPP_API Narrate(std::set<std::set<int>> c2dSet);
+	std::string TMCommonCPP_API Narrate(double vDouble);
 #pragma endregion
 }
 
