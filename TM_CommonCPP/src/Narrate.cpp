@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "TM_CommonCPP/Narrate.h"
 
-namespace TM_CommonCPP
+namespace TMC
 {
 	int Narrator::iIndent = 0;
 	std::string Narrator::sIndent = " ";

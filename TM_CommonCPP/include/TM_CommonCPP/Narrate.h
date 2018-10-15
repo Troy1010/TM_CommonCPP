@@ -13,7 +13,7 @@
 #define TMCommonCPP_API
 #endif
 
-namespace TM_CommonCPP
+namespace TMC
 {
 	class Narrator
 	{
@@ -45,7 +45,7 @@ namespace TM_CommonCPP
 			ss << "Collection(Size:" << vVar.size() << ")..";
 			iIndent++;
 			for (auto vItem : vVar) {
-				ss << "\n" + TM_CommonCPP::Narrator::Indent() << TM_CommonCPP::Narrate(vItem);
+				ss << "\n" + TMC::Narrator::Indent() << TMC::Narrate(vItem);
 			}
 			iIndent--;
 			return ss.str();
@@ -56,7 +56,7 @@ namespace TM_CommonCPP
 			std::string s = "Collection..";
 			iIndent++;
 			for (auto vItem : vVar) {
-				s += "\n" + TM_CommonCPP::Narrator::Indent() + TM_CommonCPP::Narrator::Narrate_Collection(vItem);
+				s += "\n" + TMC::Narrator::Indent() + TMC::Narrator::Narrate_Collection(vItem);
 			}
 			iIndent--;
 			return s;
