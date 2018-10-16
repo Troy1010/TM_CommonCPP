@@ -39,7 +39,7 @@
     <ClInclude Include="include\TM_CommonCPP\Narrate.h">
       <Filter>h</Filter>
     </ClInclude>
-    <ClInclude Include="include\TM_CommonCPP\IterableSequentialEnum.h">
+    <ClInclude Include="include\TM_CommonCPP\Util_VariadicMacros.h">
       <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>
