@@ -156,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\TM_CommonCPP\IterableSequentialEnum.h" />
     <ClInclude Include="include\TM_CommonCPP\Misc.h" />
     <ClInclude Include="include\TM_CommonCPP\Narrate.h" />
     <ClInclude Include="include\TM_CommonCPP\PlogFormatter.h" />
