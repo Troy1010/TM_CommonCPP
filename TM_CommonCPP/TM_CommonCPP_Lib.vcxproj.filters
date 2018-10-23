@@ -42,6 +42,9 @@
     <ClInclude Include="include\TM_CommonCPP\Util_VariadicMacros.h">
       <Filter>h</Filter>
     </ClInclude>
+    <ClInclude Include="include\TM_CommonCPP\StdStringFromFormatString.h">
+      <Filter>h</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -51,6 +54,9 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Narrate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdStringFromFormatString.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
