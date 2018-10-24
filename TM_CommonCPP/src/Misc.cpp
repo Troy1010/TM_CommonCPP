@@ -42,3 +42,10 @@ std::vector<std::string> SplitString(std::string& sString, const char* sDelimite
 	return SplitString(sString, sTemp);
 	//return SplitString(sString, std::string(sDelimiter)); // Errors. Why?
 }
+
+int IntFromString(std::string sString)
+{
+	int iTemp = 0;
+	std::istringstream(sString) >> iTemp;
+	return iTemp;
+}
