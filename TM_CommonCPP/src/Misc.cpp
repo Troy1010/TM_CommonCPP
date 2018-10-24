@@ -30,7 +30,8 @@ std::vector<std::string> SplitString(std::string &sString, std::string &sDelimit
 		pos = sString.find(sDelimiter, prev);
 		if (pos == std::string::npos) pos = sString.length();
 		std::string token = sString.substr(prev, pos - prev);
-		if (!token.empty()) cStrings.push_back(token);
+		//if (!token.empty()) cStrings.push_back(token); // Lets not skip empty
+		cStrings.push_back(token);
 		prev = pos + sDelimiter.length();
 	} while (pos < sString.length() && prev < sString.length());
 	return cStrings;
