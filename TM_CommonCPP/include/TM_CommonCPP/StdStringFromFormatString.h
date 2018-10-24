@@ -1,5 +1,7 @@
 #pragma once
-
 #include <string>
 
-std::string StdStringFromFormatString(const char *fmt, ...);
+namespace TMC
+{
+	std::string StdStringFromFormatString(const char *fmt, ...);
+}
