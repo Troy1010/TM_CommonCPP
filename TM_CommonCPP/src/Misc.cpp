@@ -20,3 +20,24 @@ std::string Hello()
 {
 	return std::string("Hello!");
 }
+
+std::vector<std::string> SplitString(std::string &sString, std::string &sDelimiter)
+{
+	std::vector<std::string> cStrings;
+	size_t prev = 0, pos = 0;
+	do
+	{
+		pos = sString.find(sDelimiter, prev);
+		if (pos == std::string::npos) pos = sString.length();
+		std::string token = sString.substr(prev, pos - prev);
+		if (!token.empty()) cStrings.push_back(token);
+		prev = pos + sDelimiter.length();
+	} while (pos < sString.length() && prev < sString.length());
+	return cStrings;
+}
+std::vector<std::string> SplitString(std::string& sString, const char* sDelimiter)
+{
+	std::string sTemp = std::string(sDelimiter); 
+	return SplitString(sString, sTemp);
+	//return SplitString(sString, std::string(sDelimiter)); // Errors. Why?
+}
