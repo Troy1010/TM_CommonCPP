@@ -49,5 +49,9 @@ namespace TMC
 	{
 		return Narrator::Narrate_StringStreamable(vDouble);
 	}
+	std::string Narrate(std::vector<std::string> cStrings)
+	{
+		return Narrator::Narrate_Collection(cStrings);
+	}
 #pragma endregion
 }

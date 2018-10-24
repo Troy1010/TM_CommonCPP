@@ -72,6 +72,7 @@ namespace TMC
 	std::string TMCommonCPP_API Narrate(float fFloat);
 	std::string TMCommonCPP_API Narrate(std::set<std::set<int>> c2dSet);
 	std::string TMCommonCPP_API Narrate(double vDouble);
+	std::string TMCommonCPP_API Narrate(std::vector<std::string> cStrings);
 #pragma endregion
 }
 
