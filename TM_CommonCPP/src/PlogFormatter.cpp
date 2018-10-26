@@ -1,5 +1,6 @@
 #pragma once
-#include ""
+#include "stdafx.h"
+#include "TM_CommonCPP/PlogFormatter.h"
 
 namespace plog
 {

@@ -168,6 +168,7 @@
   <ItemGroup>
     <ClCompile Include="src\Misc.cpp" />
     <ClCompile Include="src\Narrate.cpp" />
+    <ClCompile Include="src\PlogFormatter.cpp" />
     <ClCompile Include="src\StdStringFromFormatString.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
