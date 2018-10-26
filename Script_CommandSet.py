@@ -1,6 +1,5 @@
 ##region Settings
 bPause = True
-sProjDll = "TM_CommonCPP/TM_CommonCPP.vcxproj"
 sLogTestsProj = "TM_CommonCPP_LogTests/TM_CommonCPP_LogTests.vcxproj"
 sProjStaticLib = "TM_CommonCPP/TM_CommonCPP_Lib.vcxproj"
 ##endregion
@@ -12,10 +11,10 @@ import VisualStudioAutomation as VS
 
 def QueActions(vCommandSet):
     #---TMDefaultSettings
-    for sProj_ in (sProjDll,sLogTestsProj,sProjStaticLib):
+    for sProj_ in (sLogTestsProj,sProjStaticLib):
         vCommandSet.Que((VS.SetTMDefaultVSSettings.Do,VS.SetTMDefaultVSSettings.Undo),sProj_)
     #---Integrate Conan-installed packages
-    for sProj_ in (sProjDll,sLogTestsProj,sProjStaticLib):
+    for sProj_ in (sLogTestsProj,sProjStaticLib):
         for sRoot in TM.GetDependencyRoots("conanbuildinfo.txt"):
             sPossibleRecommendedIntegrationPath = os.path.join(sRoot,"RecommendedIntegration.py")
             if os.path.isfile(sPossibleRecommendedIntegrationPath):
@@ -27,7 +26,7 @@ try:
     vCommandSet = TM.CommandSet.TryLoad()
     QueActions(vCommandSet)
     print("Executing CommandSet..")
-    vCommandSet.Execute(bRedo=True)
+    vCommandSet.Execute()
     vCommandSet.Save()
 except Exception as e:
     TM.DisplayException(e)

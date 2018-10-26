@@ -6,13 +6,6 @@
 #include "Misc.h"
 #include <iostream>
 
-#ifdef TMCOMMONCPP_EXPORTS
-#define TMCommonCPP_API __declspec(dllexport)
-#else
-//#define TMCommonCPP_API __declspec(dllimport)
-#define TMCommonCPP_API
-#endif
-
 namespace TMC
 {
 	class Narrator
@@ -22,8 +15,8 @@ namespace TMC
 		Narrator() {}
 		~Narrator() {}
 	public:
-		static int TMCommonCPP_API iIndent;
-		static std::string TMCommonCPP_API Indent();
+		static int iIndent;
+		static std::string Indent();
 
 		template<typename T>
 		static std::string Narrate_StringStreamable(T vVar)
@@ -64,15 +57,15 @@ namespace TMC
 	};
 
 #pragma region Narrate Overloads
-	std::string TMCommonCPP_API Narrate(int iInt);
-	std::string TMCommonCPP_API Narrate(const char vCString[]);
-	std::string TMCommonCPP_API Narrate(std::set<int> cSet);
-	std::string TMCommonCPP_API Narrate(bool bBool);
-	std::string TMCommonCPP_API Narrate(std::string sString);
-	std::string TMCommonCPP_API Narrate(float fFloat);
-	std::string TMCommonCPP_API Narrate(std::set<std::set<int>> c2dSet);
-	std::string TMCommonCPP_API Narrate(double vDouble);
-	std::string TMCommonCPP_API Narrate(std::vector<std::string> cStrings);
+	std::string Narrate(int iInt);
+	std::string Narrate(const char vCString[]);
+	std::string Narrate(std::set<int> cSet);
+	std::string Narrate(bool bBool);
+	std::string Narrate(std::string sString);
+	std::string Narrate(float fFloat);
+	std::string Narrate(std::set<std::set<int>> c2dSet);
+	std::string Narrate(double vDouble);
+	std::string Narrate(std::vector<std::string> cStrings);
 #pragma endregion
 }
 
