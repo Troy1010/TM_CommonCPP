@@ -16,9 +16,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{132cfa2f-5715-4c1d-aae9-4de5d0a932c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="h">
-      <UniqueIdentifier>{2aec735a-eaeb-4e86-8ed3-7a4b67d13660}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -27,23 +24,23 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\TM_CommonCPP\PlogFormatter.h">
-      <Filter>h</Filter>
-    </ClInclude>
-    <ClInclude Include="include\TM_CommonCPP\Properties.h">
-      <Filter>h</Filter>
-    </ClInclude>
     <ClInclude Include="include\TM_CommonCPP\Misc.h">
-      <Filter>h</Filter>
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="include\TM_CommonCPP\Narrate.h">
-      <Filter>h</Filter>
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="include\TM_CommonCPP\Util_VariadicMacros.h">
-      <Filter>h</Filter>
+    <ClInclude Include="include\TM_CommonCPP\PlogFormatter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TM_CommonCPP\Properties.h">
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="include\TM_CommonCPP\StdStringFromFormatString.h">
-      <Filter>h</Filter>
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\TM_CommonCPP\Util_VariadicMacros.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
