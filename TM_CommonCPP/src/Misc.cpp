@@ -18,11 +18,6 @@ namespace TMC
 		return os.str();
 	}
 
-	std::string Hello()
-	{
-		return std::string("Hello!");
-	}
-
 	std::vector<std::string> SplitString(std::string &sString, std::string &sDelimiter)
 	{
 		std::vector<std::string> cStrings;
