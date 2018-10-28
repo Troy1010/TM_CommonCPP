@@ -24,7 +24,7 @@ namespace TMC
 	}
 	std::string Narrate(std::set<std::set<int>> c2dSet)
 	{
-		return Narrator::Narrate_2dCollection(c2dSet);
+		return Narrator::Narrate_Collection(c2dSet, TMC::Narrator::Narrate_Collection<std::set<int>>);
 	}
 	std::string Narrate(bool bBool)
 	{

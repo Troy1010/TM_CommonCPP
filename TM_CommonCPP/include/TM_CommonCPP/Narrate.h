@@ -5,6 +5,7 @@
 #include <set>
 #include "Misc.h"
 #include <iostream>
+#include <functional>
 
 namespace TMC
 {
@@ -39,6 +40,24 @@ namespace TMC
 			iIndent++;
 			for (auto vItem : vVar) {
 				ss << "\n" + TMC::Narrator::Indent() << TMC::Narrate(vItem);
+			}
+			iIndent--;
+			return ss.str();
+		}
+		template<typename T, typename T2>
+		static std::string Narrate_Collection(T vVar, T2 vFunc)
+		{
+			std::ostringstream ss;
+			//---Empty Collection
+			if (vVar.size() == 0)
+			{
+				return std::string("<Empty Collection>");
+			}
+			//---
+			ss << "Collection(Size:" << vVar.size() << ")..";
+			iIndent++;
+			for (auto vItem : vVar) {
+				ss << "\n" + TMC::Narrator::Indent() << vFunc(vItem);
 			}
 			iIndent--;
 			return ss.str();
