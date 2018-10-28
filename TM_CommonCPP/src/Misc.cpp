@@ -32,7 +32,7 @@ namespace TMC
 			cReturningStrings.push_back(token);
 			prev = pos + sDelimiter.length();
 			iSplitCount++;
-		} while (pos < sString.length() && prev < sString.length() && ((iMaxSplit == 0) || iSplitCount < iMaxSplit));
+		} while (pos < sString.length() && pos < sString.length() && ((iMaxSplit == 0) || iSplitCount < iMaxSplit));
 		return cReturningStrings;
 	}
 	std::vector<std::string> SplitString(std::string& sString, const char* sDelimiter, int iMaxSplit)
