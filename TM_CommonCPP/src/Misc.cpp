@@ -19,7 +19,7 @@ namespace TMC
 		return os.str();
 	}
 
-	std::vector<std::string> SplitString(std::string &sString, std::string &sDelimiter, int iMaxSplit)
+	std::vector<std::string> SplitString(const std::string& sString, std::string &sDelimiter, int iMaxSplit)
 	{
 		std::vector<std::string> cReturningStrings;
 		size_t prev = 0, pos;
@@ -35,13 +35,13 @@ namespace TMC
 		} while (pos < sString.length() && pos < sString.length() && ((iMaxSplit == 0) || iSplitCount < iMaxSplit));
 		return cReturningStrings;
 	}
-	std::vector<std::string> SplitString(std::string& sString, const char* sDelimiter, int iMaxSplit)
+	std::vector<std::string> SplitString(const std::string& sString, const char* sDelimiter, int iMaxSplit)
 	{
 		std::string sTemp = std::string(sDelimiter);
 		return SplitString(sString, sTemp, iMaxSplit);
 		//return SplitString(sString, std::string(sDelimiter)); // Errors. Why?
 	}
-	std::vector<std::string> RSplitString(std::string &sString, std::string &sDelimiter, int iMaxSplit)
+	std::vector<std::string> RSplitString(const std::string& sString, std::string &sDelimiter, int iMaxSplit)
 	{
 		std::vector<std::string> cReturningStrings;
 		size_t vDelimSize = sDelimiter.length();
@@ -63,7 +63,7 @@ namespace TMC
 		std::reverse(cReturningStrings.begin(), cReturningStrings.end());
 		return cReturningStrings;
 	}
-	std::vector<std::string> RSplitString(std::string& sString, const char* sDelimiter, int iMaxSplit)
+	std::vector<std::string> RSplitString(const std::string& sString, const char* sDelimiter, int iMaxSplit)
 	{
 		std::string sTemp = std::string(sDelimiter);
 		return RSplitString(sString, sTemp, iMaxSplit);

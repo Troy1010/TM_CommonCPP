@@ -53,5 +53,9 @@ namespace TMC
 	{
 		return Narrator::Narrate_Collection(cStrings);
 	}
+	std::string Narrate(std::pair<int, std::string> vPair)
+	{
+		return Narrate(vPair.first) + ":" + Narrate(vPair.second);
+	}
 #pragma endregion
 }

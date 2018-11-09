@@ -85,6 +85,7 @@ namespace TMC
 	std::string Narrate(std::set<std::set<int>> c2dSet);
 	std::string Narrate(double vDouble);
 	std::string Narrate(std::vector<std::string> cStrings);
+	std::string Narrate(std::pair<int, std::string> vPair);
 #pragma endregion
 }
 
