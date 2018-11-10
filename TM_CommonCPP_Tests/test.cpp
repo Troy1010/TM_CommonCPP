@@ -1,7 +1,7 @@
 #include "pch.h"
-#include ""
+#include "TM_CommonCPP/String.h"
 
-TEST(TestCaseName, TestName) {
-  EXPECT_EQ(1, 1);
-  EXPECT_TRUE(true);
+TEST(TestCaseName, Split) {
+	std::string sString = "I am a string";
+	ASSERT_TRUE(sString == "I am a string");
 }
