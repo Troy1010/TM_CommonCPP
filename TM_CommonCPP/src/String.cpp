@@ -10,14 +10,14 @@ namespace TMC
 		return s.str();
 	}
 
-	std::string Str::Repeat(std::string s, int n) {
+	std::string Str::Repeat(const std::string& s, int n) {
 		std::ostringstream os;
 		for (int i = 0; i < n; i++)
 			os << s;
 		return os.str();
 	}
 
-	std::vector<std::string> Str::Split(const std::string& sString, std::string &sDelimiter, int iMaxSplit)
+	std::vector<std::string> Str::Split(const std::string& sString, const std::string &sDelimiter, int iMaxSplit)
 	{
 		std::vector<std::string> cReturningStrings;
 		size_t prev = 0, pos;
@@ -33,13 +33,7 @@ namespace TMC
 		} while (pos < sString.length() && pos < sString.length() && ((iMaxSplit == 0) || iSplitCount < iMaxSplit));
 		return cReturningStrings;
 	}
-	std::vector<std::string> Str::Split(const std::string& sString, const char* sDelimiter, int iMaxSplit)
-	{
-		std::string sTemp = std::string(sDelimiter);
-		return Split(sString, sTemp, iMaxSplit);
-		//return SplitString(sString, std::string(sDelimiter)); // Errors. Why?
-	}
-	std::vector<std::string> Str::RSplit(const std::string& sString, std::string &sDelimiter, int iMaxSplit)
+	std::vector<std::string> Str::RSplit(const std::string& sString, const std::string &sDelimiter, int iMaxSplit)
 	{
 		std::vector<std::string> cReturningStrings;
 		size_t vDelimSize = sDelimiter.length();
@@ -61,9 +55,15 @@ namespace TMC
 		std::reverse(cReturningStrings.begin(), cReturningStrings.end());
 		return cReturningStrings;
 	}
-	std::vector<std::string> Str::RSplit(const std::string& sString, const char* sDelimiter, int iMaxSplit)
+	std::string Str::Replace(std::string& s, const std::string& sFrom, const std::string& sTo)
 	{
-		std::string sTemp = std::string(sDelimiter);
-		return RSplit(sString, sTemp, iMaxSplit);
+		if (sFrom.empty())
+			return s;
+		size_t start_pos = 0;
+		while ((start_pos = s.find(sFrom, start_pos)) != std::string::npos) {
+			s.replace(start_pos, sFrom.length(), sTo);
+			start_pos += sTo.length();
+		}
+		return s;
 	}
 }
