@@ -59,10 +59,10 @@ namespace TMC
 	{
 		if (sFrom.empty())
 			return s;
-		size_t start_pos = 0;
-		while ((start_pos = s.find(sFrom, start_pos)) != std::string::npos) {
-			s.replace(start_pos, sFrom.length(), sTo);
-			start_pos += sTo.length();
+		size_t findPos = 0;
+		while ((findPos = s.find(sFrom, findPos)) != std::string::npos) {
+			s.replace(findPos, sFrom.length(), sTo);
+			findPos += sTo.length();
 		}
 		return s;
 	}
