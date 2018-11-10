@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "TM_CommonCPP/Narrate.h"
+#include "TM_CommonCPP/String.h"
 
 namespace TMC
 {
@@ -7,7 +8,7 @@ namespace TMC
 	std::string Narrator::sIndent = " ";
 	std::string Narrator::Indent()
 	{
-		return string_repeat(iIndent, sIndent);
+		return Str::string_repeat(iIndent, sIndent);
 	}
 #pragma region Narrate Overloads
 	std::string Narrate(int iInt)
