@@ -17,7 +17,7 @@ namespace TMC
 		return os.str();
 	}
 
-	std::vector<std::string> Str::Split(const std::string& sString, const std::string &sDelimiter, int iMaxSplit)
+	std::vector<std::string> Str::Split(const std::string& sString, const std::string &sDelimiter, const int iMaxSplit)
 	{
 		std::vector<std::string> cReturningStrings;
 		size_t prev = 0, pos;
@@ -33,7 +33,7 @@ namespace TMC
 		} while (pos < sString.length() && pos < sString.length() && ((iMaxSplit == 0) || iSplitCount < iMaxSplit));
 		return cReturningStrings;
 	}
-	std::vector<std::string> Str::RSplit(const std::string& sString, const std::string &sDelimiter, int iMaxSplit)
+	std::vector<std::string> Str::RSplit(const std::string& sString, const std::string &sDelimiter, const int iMaxSplit)
 	{
 		std::vector<std::string> cReturningStrings;
 		size_t vDelimSize = sDelimiter.length();
