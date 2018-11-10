@@ -8,7 +8,7 @@ namespace TMC
 	std::string Narrator::sIndent = " ";
 	std::string Narrator::Indent()
 	{
-		return Str::string_repeat(iIndent, sIndent);
+		return Str::Repeat(sIndent, iIndent);
 	}
 #pragma region Narrate Overloads
 	std::string Narrate(int iInt)
