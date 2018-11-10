@@ -17,41 +17,34 @@ namespace TMC
 		return os.str();
 	}
 
-	std::vector<std::string> Str::Split(const std::string& sString, const std::string &sDelimiter, const int iMaxSplit)
+	std::vector<std::string> Str::Split(const std::string& sString, const std::string &sDelimiter, const int iMaxSplit, const bool bInclusive)
 	{
 		std::vector<std::string> cReturningStrings;
-		size_t prev = 0, pos;
-		int iSplitCount = 0;
-		do
-		{
-			pos = sString.find(sDelimiter, prev);
-			if (pos == std::string::npos) pos = sString.length();
-			std::string token = sString.substr(prev, pos - prev);
-			cReturningStrings.push_back(token);
-			prev = pos + sDelimiter.length();
-			iSplitCount++;
-		} while (pos < sString.length() && pos < sString.length() && ((iMaxSplit == 0) || iSplitCount < iMaxSplit));
+		int iSplitCountdown = iMaxSplit - 1;
+		size_t findPos = 0, startSearchPos = 0;
+		while (((findPos = sString.find(sDelimiter, startSearchPos)) != std::string::npos) && (iSplitCountdown > 0 || iMaxSplit == 0)) {
+			cReturningStrings.push_back(sString.substr(startSearchPos, findPos - startSearchPos));
+			startSearchPos = findPos + sDelimiter.length(); iSplitCountdown--;
+		}
+		if (bInclusive || findPos == std::string::npos)
+			cReturningStrings.push_back(sString.substr(startSearchPos, std::string::npos));
+		else
+			cReturningStrings.push_back(sString.substr(startSearchPos, findPos - startSearchPos));
 		return cReturningStrings;
 	}
-	std::vector<std::string> Str::RSplit(const std::string& sString, const std::string &sDelimiter, const int iMaxSplit)
+	std::vector<std::string> Str::RSplit(const std::string& sString, const std::string &sDelimiter, const int iMaxSplit, const bool bInclusive)
 	{
 		std::vector<std::string> cReturningStrings;
-		size_t vDelimSize = sDelimiter.length();
-		size_t prev = sString.length() - vDelimSize, pos;
-		int iSplitCount = 0;
-		std::string token;
-		do
-		{
-			pos = sString.rfind(sDelimiter, prev);
-			if (pos == std::string::npos)
-			{
-				pos = 0 - vDelimSize;
-			}
-			std::string token = sString.substr(pos + vDelimSize, prev - pos);
-			cReturningStrings.push_back(token);
-			prev = pos - vDelimSize;
-			iSplitCount++;
-		} while (pos < sString.length() && prev < sString.length() && ((iMaxSplit == 0) || iSplitCount < iMaxSplit));
+		int iSplitCountdown = iMaxSplit - 1;
+		size_t findPos = 0, startSearchPos = sString.length() - 1;
+		while (((findPos = sString.rfind(sDelimiter, startSearchPos)) != std::string::npos) && (iSplitCountdown > 0 || iMaxSplit == 0)) {
+			cReturningStrings.push_back(sString.substr(findPos + sDelimiter.length(), startSearchPos + 1 - (findPos + sDelimiter.length())));
+			startSearchPos = findPos - 1; iSplitCountdown--;
+		}
+		if (bInclusive || findPos == std::string::npos)
+			cReturningStrings.push_back(sString.substr(0, startSearchPos + 1));
+		else
+			cReturningStrings.push_back(sString.substr(findPos + sDelimiter.length(), startSearchPos + 1 - (findPos + sDelimiter.length())));
 		std::reverse(cReturningStrings.begin(), cReturningStrings.end());
 		return cReturningStrings;
 	}
