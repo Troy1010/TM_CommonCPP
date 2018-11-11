@@ -8,8 +8,7 @@ compiler.runtime=MTd
 compiler.version=15
 compiler.toolset=v141
 build_type=Debug
-
-source_code=True
 [options]
+source_code=True
 [build_requires]
 [env]
