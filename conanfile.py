@@ -1,5 +1,6 @@
-from conans import ConanFile
+from conans import ConanFile, MSBuild
 import os
+import TM_CommonPy  as TM
 
 class TM_CommonCPP_Conan(ConanFile):
     name = "TM_CommonCPP"
@@ -7,17 +8,26 @@ class TM_CommonCPP_Conan(ConanFile):
     license = "MIT"
     url = "https://github.com/Troy1010/TM_CommonCPP"
     description = "TMinus1010's common C++ library."
-    requires="Plog/0.1@Troy1010/channel"
+    requires= "Plog/0.1@Troy1010/channel"
     generators="visual_studio"
     exports = "RecommendedIntegration.py"
+    settings = "os", "compiler", "build_type", "arch", "source_code" #MSBuild is nonfunctional without this line
 
     def source(self):
-        self.run("git clone -b dev https://github.com/Troy1010/TM_CommonCPP.git")
+        self.run("git clone -b beta https://github.com/Troy1010/TM_CommonCPP.git")
+
+    def build(self):
+        if not self.settings.source_code:
+            vMSBuild = MSBuild(self)
+            vMSBuild.build("TM_CommonCPP/TM_CommonCPP.sln")
 
     def package(self):
-        self.copy("RecommendedIntegration.py")
-        self.copy("*.h", dst="include", src="TM_CommonCPP/TM_CommonCPP/include")
-        self.copy("*", dst="TM_CommonCPP", src="TM_CommonCPP")
+        if self.settings.source_code:
+            self.copy("RecommendedIntegration.py")
+            self.copy("*.h", dst="include", src="TM_CommonCPP/TM_CommonCPP/include")
+            self.copy("*", dst="TM_CommonCPP", src="TM_CommonCPP")
+        else:
+            self.copy("*.lib", dst="lib", src="TM_CommonCPP", keep_path=False)
 
     def package_info(self):
         self.cpp_info.includedirs = ['include']
