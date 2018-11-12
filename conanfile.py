@@ -33,3 +33,6 @@ class TM_CommonCPP_Conan(ConanFile):
 
     def package_info(self):
         self.cpp_info.includedirs = ['include']
+        if not self.options.source_code:
+            self.cpp_info.libdirs = ['lib']
+            self.cpp_info.libs = ['TM_CommonCPP_Lib.lib']
