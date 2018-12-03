@@ -16,15 +16,10 @@ class TM_CommonCPP_Conan(ConanFile):
     def source(self):
         self.run("git clone -b beta https://github.com/Troy1010/TM_CommonCPP.git")
 
-    def build(self):
-        vMSBuild = MSBuild(self)
-        vMSBuild.build("TM_CommonCPP/TM_CommonCPP.sln")
-
     def package(self):
         self.copy("*.h", dst="include", src="TM_CommonCPP/TM_CommonCPP/include")
-        self.copy("*.lib", dst="lib", src="TM_CommonCPP", keep_path=False)
+        self.copy("RecommendedIntegration.py")
+        self.copy("*", dst="TM_CommonCPP", src="TM_CommonCPP")
 
     def package_info(self):
         self.cpp_info.includedirs = ['include']
-        self.cpp_info.libdirs = ['lib']
-        self.cpp_info.libs = ['TM_CommonCPP_Lib.lib']

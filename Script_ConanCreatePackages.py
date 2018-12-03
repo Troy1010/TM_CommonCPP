@@ -5,8 +5,8 @@ import os, sys
 import TM_CommonPy as TM
 
 try:
-    TM.Run("conan create . Troy1010/beta -pr conanprofile_OBSEPlugin_Lib")
-    TM.Run("conan create . Troy1010/beta_source -pr conanprofile_OBSEPlugin_Source")
+    TM.Run("conan create conanfile.py Troy1010/beta -pr conanprofile_OBSEPlugin")
+    TM.Run("conan create conanfile_Source.py Troy1010/beta_source -pr conanprofile_OBSEPlugin")
 except Exception as e:
     TM.DisplayException(e)
     sys.exit(1)
