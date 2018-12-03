@@ -4,7 +4,7 @@ Debug
 .vs
 .vscode
 packages
-bin/*
+bin
 Log_*
 
 # Prerequisites
