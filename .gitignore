@@ -2,6 +2,7 @@
 Release
 Debug
 .vs
+.vscode
 packages
 bin/*
 Log_*
