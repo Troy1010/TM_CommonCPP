@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Label="Conan-RootDirs">
-    <Conan-Plog-Root>C:\Users\2troy\.conan\data\Plog\0.1\Troy1010\channel\package\5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9</Conan-Plog-Root>
+    <Conan-Plog-Root>$(USERPROFILE)/.conan/data/Plog/0.1/Troy1010/channel/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9</Conan-Plog-Root>
   </PropertyGroup>
   <PropertyGroup Label="ConanVariables">
     <ConanBinaryDirectories></ConanBinaryDirectories>
@@ -15,7 +15,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:/Users/2troy/.conan/data/Plog/0.1/Troy1010/channel/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(USERPROFILE)/.conan/data/Plog/0.1/Troy1010/channel/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
@@ -25,10 +25,10 @@
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <Midl>
-      <AdditionalIncludeDirectories>C:/Users/2troy/.conan/data/Plog/0.1/Troy1010/channel/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(USERPROFILE)/.conan/data/Plog/0.1/Troy1010/channel/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </Midl>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:/Users/2troy/.conan/data/Plog/0.1/Troy1010/channel/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(USERPROFILE)/.conan/data/Plog/0.1/Troy1010/channel/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalOptions> %(AdditionalOptions)</AdditionalOptions>
     </ResourceCompile>
