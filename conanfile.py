@@ -9,7 +9,6 @@ class TM_CommonCPP_Conan(ConanFile):
     description = "TMinus1010's common C++ library."
     requires = "Plog/0.1@Troy1010/channel"
     generators = "visual_studio"
-    exports = "RecommendedIntegration.py"
     # MSBuild is nonfunctional without this line
     settings = "os", "compiler", "build_type", "arch"
 
