@@ -13,7 +13,7 @@ class TM_CommonCPP_Conan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
 
     def source(self):
-        self.run("git clone -b dev https://github.com/Troy1010/TM_CommonCPP.git")
+        self.run("git clone -b beta https://github.com/Troy1010/TM_CommonCPP.git")
 
     def build(self):
         vMSBuild = MSBuild(self)
