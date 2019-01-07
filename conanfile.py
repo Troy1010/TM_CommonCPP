@@ -13,11 +13,11 @@ class TM_CommonCPP_Conan(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
 
     def source(self):
-        self.run("git clone -b beta https://github.com/Troy1010/TM_CommonCPP.git")
+        self.run("git clone -b dev https://github.com/Troy1010/TM_CommonCPP.git")
 
     def build(self):
         vMSBuild = MSBuild(self)
-        vMSBuild.build("TM_CommonCPP/TM_CommonCPP.sln")
+        vMSBuild.build("TM_CommonCPP/TM_CommonCPP/TM_CommonCPP_Lib.vcxproj")
 
     def package(self):
         self.copy("*.h", dst="include", src="TM_CommonCPP/TM_CommonCPP/include")
