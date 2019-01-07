@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TM_CommonCPP_LogTests", "TM
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TM_CommonCPP_Lib", "TM_CommonCPP\TM_CommonCPP_Lib.vcxproj", "{434875EF-3F94-44DD-BFC5-93D69C0DE9A2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TM_CommonCPP_Tests", "TM_CommonCPP_Tests\TM_CommonCPP_Tests.vcxproj", "{7A78B17C-C14C-4ACE-A3C7-70A535229450}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{434875EF-3F94-44DD-BFC5-93D69C0DE9A2}.Release|x64.Build.0 = Release|x64
 		{434875EF-3F94-44DD-BFC5-93D69C0DE9A2}.Release|x86.ActiveCfg = Release|Win32
 		{434875EF-3F94-44DD-BFC5-93D69C0DE9A2}.Release|x86.Build.0 = Release|Win32
+		{7A78B17C-C14C-4ACE-A3C7-70A535229450}.Debug|x64.ActiveCfg = Debug|x64
+		{7A78B17C-C14C-4ACE-A3C7-70A535229450}.Debug|x64.Build.0 = Debug|x64
+		{7A78B17C-C14C-4ACE-A3C7-70A535229450}.Debug|x86.ActiveCfg = Debug|Win32
+		{7A78B17C-C14C-4ACE-A3C7-70A535229450}.Debug|x86.Build.0 = Debug|Win32
+		{7A78B17C-C14C-4ACE-A3C7-70A535229450}.Release|x64.ActiveCfg = Release|x64
+		{7A78B17C-C14C-4ACE-A3C7-70A535229450}.Release|x64.Build.0 = Release|x64
+		{7A78B17C-C14C-4ACE-A3C7-70A535229450}.Release|x86.ActiveCfg = Release|Win32
+		{7A78B17C-C14C-4ACE-A3C7-70A535229450}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

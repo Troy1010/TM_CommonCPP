@@ -20,8 +20,7 @@ class TM_CommonCPP_Conan(ConanFile):
         vMSBuild.build("TM_CommonCPP/TM_CommonCPP.sln")
 
     def package(self):
-        self.copy("*.h", dst="include",
-                  src="TM_CommonCPP/TM_CommonCPP/include")
+        self.copy("*.h", dst="include", src="TM_CommonCPP/TM_CommonCPP/include")
         self.copy("*.lib", dst="lib", src="TM_CommonCPP", keep_path=False)
 
     def package_info(self):
