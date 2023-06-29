@@ -2,7 +2,11 @@
 Release
 Debug
 .vs
+.vscode
 packages
+bin
+Log_*
+.idea/
 
 # Prerequisites
 *.d
