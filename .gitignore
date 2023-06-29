@@ -6,6 +6,7 @@ Debug
 packages
 bin
 Log_*
+.idea/
 
 # Prerequisites
 *.d
