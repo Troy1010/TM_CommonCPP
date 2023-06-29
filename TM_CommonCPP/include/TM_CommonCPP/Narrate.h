@@ -9,6 +9,18 @@
 
 namespace TMC
 {
+#pragma region Narrate Overloads
+	std::string Narrate(int iInt);
+	std::string Narrate(const char vCString[]);
+	std::string Narrate(std::set<int> cSet);
+	std::string Narrate(bool bBool);
+	std::string Narrate(std::string sString);
+	std::string Narrate(float fFloat);
+	std::string Narrate(std::set<std::set<int>> c2dSet);
+	std::string Narrate(double vDouble);
+	std::string Narrate(std::vector<std::string> cStrings);
+	std::string Narrate(std::pair<int, std::string> vPair);
+#pragma endregion
 	class Narrator
 	{
 	private:
@@ -74,19 +86,6 @@ namespace TMC
 			return s;
 		}
 	};
-
-#pragma region Narrate Overloads
-	std::string Narrate(int iInt);
-	std::string Narrate(const char vCString[]);
-	std::string Narrate(std::set<int> cSet);
-	std::string Narrate(bool bBool);
-	std::string Narrate(std::string sString);
-	std::string Narrate(float fFloat);
-	std::string Narrate(std::set<std::set<int>> c2dSet);
-	std::string Narrate(double vDouble);
-	std::string Narrate(std::vector<std::string> cStrings);
-	std::string Narrate(std::pair<int, std::string> vPair);
-#pragma endregion
 }
 
 
