@@ -41,6 +41,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TM_CommonCPP\TM_CommonCPP_Lib.vcxproj">
+      <Project>{434875ef-3f94-44dd-bfc5-93d69c0de9a2}</Project>
+      <Name>TM_CommonCPP_Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
