@@ -1,38 +1,38 @@
 #include "gtest/gtest.h"
-#include "../TM_CommonCPP/include/TM_CommonCPP/Narrate.h"
+#include "../TM_CommonCPP/include/TM_CommonCPP/ToDisplayStr.h"
 #include "../TM_CommonCPP/include/TM_CommonCPP/Util_VariadicMacros.h"
 #include "../TM_CommonCPP/include/TM_CommonCPP/String.h"
 #include <vector>
 #include <list>
 
-TEST(Narrate, NarrateAnInt) {
+TEST(ToDisplayStr, ToDisplayStrAnInt) {
 	int i = 2;
-	EXPECT_EQ("2", TMC::Narrate(i));
+	EXPECT_EQ("2", TMC::ToDisplayStr(i));
 }
 
-TEST(Narrate, NarrateConstChar) {
+TEST(ToDisplayStr, ToDisplayStrConstChar) {
 	const char vCString[] = "qwer";
-	EXPECT_EQ("qwer", TMC::Narrate(vCString));
+	EXPECT_EQ("qwer", TMC::ToDisplayStr(vCString));
 }
 
-TEST(Narrate, NarrateBool) {
+TEST(ToDisplayStr, ToDisplayStrBool) {
 	bool bBool = true;
-	EXPECT_EQ("true", TMC::Narrate(bBool));
+	EXPECT_EQ("true", TMC::ToDisplayStr(bBool));
 	bBool = false;
-	EXPECT_EQ("false", TMC::Narrate(bBool));
+	EXPECT_EQ("false", TMC::ToDisplayStr(bBool));
 }
 
-TEST(Narrate, NarrateFloat) {
+TEST(ToDisplayStr, ToDisplayStrFloat) {
 	float fFloat = 0.46f;
-	EXPECT_EQ("0.46", TMC::Narrate(fFloat));
+	EXPECT_EQ("0.46", TMC::ToDisplayStr(fFloat));
 }
 
-TEST(Narrate, NarrateList) {
+TEST(ToDisplayStr, ToDisplayStrList) {
 	std::list<int> list;
 	list.push_back(1);
 	list.push_back(2);
 	list.push_back(3);
-	EXPECT_EQ("Collection(Size:3)..\n 1\n 2\n 3", TMC::Narrate(list));
+	EXPECT_EQ("Collection(Size:3)..\n 1\n 2\n 3", TMC::ToDisplayStr(list));
 }
 
 TEST(Util_VariadicMacros, CountArgs) {

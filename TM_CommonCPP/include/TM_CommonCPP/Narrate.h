@@ -11,85 +11,112 @@
 namespace TMC
 {
 #pragma region Narrate Overloads
-	std::string Narrate(int iInt);
-	std::string Narrate(const char vCString[]);
-	std::string Narrate(std::set<int> cSet);
-	std::string Narrate(std::list<int> cList);
-	std::string Narrate(bool bBool);
-	std::string Narrate(std::string sString);
-	std::string Narrate(float fFloat);
-	std::string Narrate(std::set<std::set<int>> c2dSet);
-	std::string Narrate(double vDouble);
-	std::string Narrate(std::vector<std::string> cStrings);
-	std::string Narrate(std::pair<int, std::string> vPair);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(int iInt);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(const char vCString[]);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(std::set<int> cSet);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(std::list<int> cList);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(bool bBool);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(std::string sString);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(float fFloat);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(std::set<std::set<int>> c2dSet);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(double vDouble);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(std::vector<std::string> cStrings);
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    std::string Narrate(std::pair<int, std::string> vPair);
 #pragma endregion
-	class Narrator
-	{
-	private:
-		static std::string sIndent;
-		Narrator() {}
-		~Narrator() {}
-	public:
-		static int iIndent;
-		static std::string Indent();
+    [[deprecated("Use the ToDisplayStr instead.")]]
+    class Narrator
+    {
+    private:
+        static std::string sIndent;
 
-		template<typename T>
-		static std::string Narrate_StringStreamable(T vVar)
-		{
-			std::ostringstream ss;
-			ss << vVar;
-			return ss.str();
-		}
-		template<typename T>
-		static std::string Narrate_Collection(T vVar)
-		{
-			std::ostringstream ss;
-			//---Empty Collection
-			if (vVar.size() == 0)
-			{
-				return std::string("<Empty Collection>");
-			}
-			//---
-			ss << "Collection(Size:" << vVar.size() << ")..";
-			iIndent++;
-			for (auto vItem : vVar) {
-				ss << "\n" + TMC::Narrator::Indent() << TMC::Narrate(vItem);
-			}
-			iIndent--;
-			return ss.str();
-		}
-		template<typename T, typename T2>
-		static std::string Narrate_Collection(T vVar, T2 vFunc)
-		{
-			std::ostringstream ss;
-			//---Empty Collection
-			if (vVar.size() == 0)
-			{
-				return std::string("<Empty Collection>");
-			}
-			//---
-			ss << "Collection(Size:" << vVar.size() << ")..";
-			iIndent++;
-			for (auto vItem : vVar) {
-				ss << "\n" + TMC::Narrator::Indent() << vFunc(vItem);
-			}
-			iIndent--;
-			return ss.str();
-		}
-		template<typename T>
-		static std::string Narrate_2dCollection(T vVar)
-		{
-			std::string s = "Collection..";
-			iIndent++;
-			for (auto vItem : vVar) {
-				s += "\n" + TMC::Narrator::Indent() + TMC::Narrator::Narrate_Collection(vItem);
-			}
-			iIndent--;
-			return s;
-		}
-	};
+        [[deprecated("Use the ToDisplayStr instead.")]]
+        Narrator()
+        {
+        }
+
+        [[deprecated("Use the ToDisplayStr instead.")]]
+        ~Narrator()
+        {
+        }
+
+    public:
+        static int iIndent;
+        static std::string Indent();
+
+        template <typename T>
+        [[deprecated("Use the ToDisplayStr instead.")]]
+        static std::string Narrate_StringStreamable(T vVar)
+        {
+            std::ostringstream ss;
+            ss << vVar;
+            return ss.str();
+        }
+
+        template <typename T>
+        [[deprecated("Use the ToDisplayStr instead.")]]
+        static std::string Narrate_Collection(T vVar)
+        {
+            std::ostringstream ss;
+            //---Empty Collection
+            if (vVar.size() == 0)
+            {
+                return std::string("<Empty Collection>");
+            }
+            //---
+            ss << "Collection(Size:" << vVar.size() << ")..";
+            iIndent++;
+            for (auto vItem : vVar)
+            {
+                ss << "\n" + TMC::Narrator::Indent() << TMC::Narrate(vItem);
+            }
+            iIndent--;
+            return ss.str();
+        }
+
+        template <typename T, typename T2>
+        [[deprecated("Use the ToDisplayStr instead.")]]
+        static std::string Narrate_Collection(T vVar, T2 vFunc)
+        {
+            std::ostringstream ss;
+            //---Empty Collection
+            if (vVar.size() == 0)
+            {
+                return std::string("<Empty Collection>");
+            }
+            //---
+            ss << "Collection(Size:" << vVar.size() << ")..";
+            iIndent++;
+            for (auto vItem : vVar)
+            {
+                ss << "\n" + TMC::Narrator::Indent() << vFunc(vItem);
+            }
+            iIndent--;
+            return ss.str();
+        }
+
+        template <typename T>
+        [[deprecated("Use the ToDisplayStr instead.")]]
+        static std::string Narrate_2dCollection(T vVar)
+        {
+            std::string s = "Collection..";
+            iIndent++;
+            for (auto vItem : vVar)
+            {
+                s += "\n" + TMC::Narrator::Indent() + TMC::Narrator::Narrate_Collection(vItem);
+            }
+            iIndent--;
+            return s;
+        }
+    };
 }
-
-
-
-
