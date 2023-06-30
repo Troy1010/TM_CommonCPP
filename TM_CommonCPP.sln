@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TM_CommonCPP_LogTests", "TM
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TM_CommonCPP_Lib", "TM_CommonCPP\TM_CommonCPP_Lib.vcxproj", "{434875EF-3F94-44DD-BFC5-93D69C0DE9A2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TM_CommonCPP_Tests2", "TM_CommonCPP_Tests2\TM_CommonCPP_Tests2.vcxproj", "{90BFF4AB-6739-415C-800C-50ED4DC52F6E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TM_CommonCPP_Tests", "TM_CommonCPP_Tests\TM_CommonCPP_Tests.vcxproj", "{90BFF4AB-6739-415C-800C-50ED4DC52F6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
