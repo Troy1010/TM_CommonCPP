@@ -1,7 +1,7 @@
-#include "pch.h"
-#include "TM_CommonCPP/Narrate.h"
-#include "TM_CommonCPP/Util_VariadicMacros.h"
-#include "TM_CommonCPP/String.h"
+#include "gtest/gtest.h"
+#include "../TM_CommonCPP/include/TM_CommonCPP/Narrate.h"
+#include "../TM_CommonCPP/include/TM_CommonCPP/Util_VariadicMacros.h"
+#include "../TM_CommonCPP/include/TM_CommonCPP/String.h"
 #include <vector>
 
 TEST(Narrate, NarrateAnInt) {
@@ -105,4 +105,3 @@ TEST(String, Replace) {
 	std::string sReplacedString = TMC::Str::Replace(s, "%", "");
 	EXPECT_EQ("There are lots of percentages here", sReplacedString);
 }
-
