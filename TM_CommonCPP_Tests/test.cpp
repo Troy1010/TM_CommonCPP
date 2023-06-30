@@ -3,6 +3,7 @@
 #include "../TM_CommonCPP/include/TM_CommonCPP/Util_VariadicMacros.h"
 #include "../TM_CommonCPP/include/TM_CommonCPP/String.h"
 #include <vector>
+#include <list>
 
 TEST(Narrate, NarrateAnInt) {
 	int i = 2;
@@ -24,6 +25,14 @@ TEST(Narrate, NarrateBool) {
 TEST(Narrate, NarrateFloat) {
 	float fFloat = 0.46f;
 	EXPECT_EQ("0.46", TMC::Narrate(fFloat));
+}
+
+TEST(Narrate, NarrateList) {
+	std::list<int> list;
+	list.push_back(1);
+	list.push_back(2);
+	list.push_back(3);
+	EXPECT_EQ("Collection(Size:3)..\n 1\n 2\n 3", TMC::Narrate(list));
 }
 
 TEST(Util_VariadicMacros, CountArgs) {

@@ -23,6 +23,10 @@ namespace TMC
 	{
 		return Narrator::Narrate_Collection(cSet);
 	}
+	std::string Narrate(std::list<int> cList)
+	{
+		return Narrator::Narrate_Collection(cList);
+	}
 	std::string Narrate(std::set<std::set<int>> c2dSet)
 	{
 		return Narrator::Narrate_Collection(c2dSet, TMC::Narrator::Narrate_Collection<std::set<int>>);

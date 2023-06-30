@@ -6,6 +6,7 @@
 #include "Misc.h"
 #include <iostream>
 #include <functional>
+#include <list>
 
 namespace TMC
 {
@@ -13,6 +14,7 @@ namespace TMC
 	std::string Narrate(int iInt);
 	std::string Narrate(const char vCString[]);
 	std::string Narrate(std::set<int> cSet);
+	std::string Narrate(std::list<int> cList);
 	std::string Narrate(bool bBool);
 	std::string Narrate(std::string sString);
 	std::string Narrate(float fFloat);
