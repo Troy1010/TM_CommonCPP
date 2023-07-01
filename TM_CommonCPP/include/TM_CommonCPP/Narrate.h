@@ -11,30 +11,29 @@
 namespace TMC
 {
 #pragma region Narrate Overloads
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(int iInt);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(const char vCString[]);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(std::set<int> cSet);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(std::list<int> cList);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(bool bBool);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(std::string sString);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(float fFloat);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(std::set<std::set<int>> c2dSet);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(double vDouble);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(std::vector<std::string> cStrings);
-    [[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToDisplayStr instead.")]]
     std::string Narrate(std::pair<int, std::string> vPair);
 #pragma endregion
-    [[deprecated("Use the ToDisplayStr instead.")]]
     class Narrator
     {
     private:
@@ -55,7 +54,6 @@ namespace TMC
         static std::string Indent();
 
         template <typename T>
-        [[deprecated("Use the ToDisplayStr instead.")]]
         static std::string Narrate_StringStreamable(T vVar)
         {
             std::ostringstream ss;
@@ -64,7 +62,6 @@ namespace TMC
         }
 
         template <typename T>
-        [[deprecated("Use the ToDisplayStr instead.")]]
         static std::string Narrate_Collection(T vVar)
         {
             std::ostringstream ss;
@@ -85,7 +82,6 @@ namespace TMC
         }
 
         template <typename T, typename T2>
-        [[deprecated("Use the ToDisplayStr instead.")]]
         static std::string Narrate_Collection(T vVar, T2 vFunc)
         {
             std::ostringstream ss;
@@ -106,7 +102,6 @@ namespace TMC
         }
 
         template <typename T>
-        [[deprecated("Use the ToDisplayStr instead.")]]
         static std::string Narrate_2dCollection(T vVar)
         {
             std::string s = "Collection..";
