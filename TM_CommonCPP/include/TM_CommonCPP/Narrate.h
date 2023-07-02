@@ -11,27 +11,27 @@
 namespace TMC
 {
 #pragma region Narrate Overloads
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(int iInt);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(const char vCString[]);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(std::set<int> cSet);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(std::list<int> cList);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(bool bBool);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(std::string sString);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(float fFloat);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(std::set<std::set<int>> c2dSet);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(double vDouble);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(std::vector<std::string> cStrings);
-    //[[deprecated("Use the ToDisplayStr instead.")]]
+    //[[deprecated("Use the ToLogStr instead.")]]
     std::string Narrate(std::pair<int, std::string> vPair);
 #pragma endregion
     class Narrator
@@ -39,12 +39,12 @@ namespace TMC
     private:
         static std::string sIndent;
 
-        [[deprecated("Use the ToDisplayStr instead.")]]
+        [[deprecated("Use the ToLogStr instead.")]]
         Narrator()
         {
         }
 
-        [[deprecated("Use the ToDisplayStr instead.")]]
+        [[deprecated("Use the ToLogStr instead.")]]
         ~Narrator()
         {
         }

@@ -10,36 +10,36 @@
 
 namespace TMC
 {
-	std::string ToDisplayStr(int iInt);
-	std::string ToDisplayStr(const char vCString[]);
-	std::string ToDisplayStr(std::set<int> cSet);
-	std::string ToDisplayStr(std::list<int> cList);
-	std::string ToDisplayStr(bool bBool);
-	std::string ToDisplayStr(std::string sString);
-	std::string ToDisplayStr(float fFloat);
-	std::string ToDisplayStr(std::set<std::set<int>> c2dSet);
-	std::string ToDisplayStr(double vDouble);
-	std::string ToDisplayStr(std::vector<std::string> cStrings);
-	std::string ToDisplayStr(std::pair<int, std::string> vPair);
-	class DisplayStrGenerator
+	std::string ToLogStr(int iInt);
+	std::string ToLogStr(const char vCString[]);
+	std::string ToLogStr(std::set<int> cSet);
+	std::string ToLogStr(std::list<int> cList);
+	std::string ToLogStr(bool bBool);
+	std::string ToLogStr(std::string sString);
+	std::string ToLogStr(float fFloat);
+	std::string ToLogStr(std::set<std::set<int>> c2dSet);
+	std::string ToLogStr(double vDouble);
+	std::string ToLogStr(std::vector<std::string> cStrings);
+	std::string ToLogStr(std::pair<int, std::string> vPair);
+	class LogStrFactory
 	{
 	private:
 		static std::string sIndent;
-		DisplayStrGenerator() {}
-		~DisplayStrGenerator() {}
+		LogStrFactory() {}
+		~LogStrFactory() {}
 	public:
 		static int iIndent;
 		static std::string Indent();
 
 		template<typename T>
-		static std::string ToDisplayStr_StringStreamable(T vVar)
+		static std::string ToLogStr_StringStreamable(T vVar)
 		{
 			std::ostringstream ss;
 			ss << vVar;
 			return ss.str();
 		}
 		template<typename T>
-		static std::string ToDisplayStr_Collection(T vVar)
+		static std::string ToLogStr_Collection(T vVar)
 		{
 			std::ostringstream ss;
 			//---Empty Collection
@@ -51,13 +51,13 @@ namespace TMC
 			ss << "Collection(Size:" << vVar.size() << ")..";
 			iIndent++;
 			for (auto vItem : vVar) {
-				ss << "\n" + TMC::DisplayStrGenerator::Indent() << TMC::ToDisplayStr(vItem);
+				ss << "\n" + TMC::LogStrFactory::Indent() << TMC::ToLogStr(vItem);
 			}
 			iIndent--;
 			return ss.str();
 		}
 		template<typename T, typename T2>
-		static std::string ToDisplayStr_Collection(T vVar, T2 vFunc)
+		static std::string ToLogStr_Collection(T vVar, T2 vFunc)
 		{
 			std::ostringstream ss;
 			//---Empty Collection
@@ -69,18 +69,18 @@ namespace TMC
 			ss << "Collection(Size:" << vVar.size() << ")..";
 			iIndent++;
 			for (auto vItem : vVar) {
-				ss << "\n" + TMC::DisplayStrGenerator::Indent() << vFunc(vItem);
+				ss << "\n" + TMC::LogStrFactory::Indent() << vFunc(vItem);
 			}
 			iIndent--;
 			return ss.str();
 		}
 		template<typename T>
-		static std::string ToDisplayStr_2dCollection(T vVar)
+		static std::string ToLogStr_2dCollection(T vVar)
 		{
 			std::string s = "Collection..";
 			iIndent++;
 			for (auto vItem : vVar) {
-				s += "\n" + TMC::DisplayStrGenerator::Indent() + TMC::DisplayStrGenerator::ToDisplayStr_Collection(vItem);
+				s += "\n" + TMC::LogStrFactory::Indent() + TMC::LogStrFactory::ToLogStr_Collection(vItem);
 			}
 			iIndent--;
 			return s;

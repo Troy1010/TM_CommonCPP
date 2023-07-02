@@ -1,38 +1,38 @@
 #include "gtest/gtest.h"
-#include "../TM_CommonCPP/include/TM_CommonCPP/ToDisplayStr.h"
+#include "../TM_CommonCPP/include/TM_CommonCPP/ToLogStr.h"
 #include "../TM_CommonCPP/include/TM_CommonCPP/Util_VariadicMacros.h"
 #include "../TM_CommonCPP/include/TM_CommonCPP/String.h"
 #include <vector>
 #include <list>
 
-TEST(ToDisplayStr, ToDisplayStrAnInt) {
+TEST(ToLogStr, ToLogStrAnInt) {
 	int i = 2;
-	EXPECT_EQ("2", TMC::ToDisplayStr(i));
+	EXPECT_EQ("2", TMC::ToLogStr(i));
 }
 
-TEST(ToDisplayStr, ToDisplayStrConstChar) {
+TEST(ToLogStr, ToLogStrConstChar) {
 	const char vCString[] = "qwer";
-	EXPECT_EQ("qwer", TMC::ToDisplayStr(vCString));
+	EXPECT_EQ("qwer", TMC::ToLogStr(vCString));
 }
 
-TEST(ToDisplayStr, ToDisplayStrBool) {
+TEST(ToLogStr, ToLogStrBool) {
 	bool bBool = true;
-	EXPECT_EQ("true", TMC::ToDisplayStr(bBool));
+	EXPECT_EQ("true", TMC::ToLogStr(bBool));
 	bBool = false;
-	EXPECT_EQ("false", TMC::ToDisplayStr(bBool));
+	EXPECT_EQ("false", TMC::ToLogStr(bBool));
 }
 
-TEST(ToDisplayStr, ToDisplayStrFloat) {
+TEST(ToLogStr, ToLogStrFloat) {
 	float fFloat = 0.46f;
-	EXPECT_EQ("0.46", TMC::ToDisplayStr(fFloat));
+	EXPECT_EQ("0.46", TMC::ToLogStr(fFloat));
 }
 
-TEST(ToDisplayStr, ToDisplayStrList) {
+TEST(ToLogStr, ToLogStrList) {
 	std::list<int> list;
 	list.push_back(1);
 	list.push_back(2);
 	list.push_back(3);
-	EXPECT_EQ("Collection(Size:3)..\n 1\n 2\n 3", TMC::ToDisplayStr(list));
+	EXPECT_EQ("Collection(Size:3)..\n 1\n 2\n 3", TMC::ToLogStr(list));
 }
 
 TEST(Util_VariadicMacros, CountArgs) {

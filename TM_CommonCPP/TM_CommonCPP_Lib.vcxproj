@@ -161,7 +161,7 @@
     <ClInclude Include="include\TM_CommonCPP\Properties.h" />
     <ClInclude Include="include\TM_CommonCPP\StdStringFromFormatString.h" />
     <ClInclude Include="include\TM_CommonCPP\String.h" />
-    <ClInclude Include="include\TM_CommonCPP\ToDisplayStr.h" />
+    <ClInclude Include="include\TM_CommonCPP\ToLogStr.h" />
     <ClInclude Include="include\TM_CommonCPP\Util_VariadicMacros.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -171,7 +171,7 @@
     <ClCompile Include="src\PlogFormatter.cpp" />
     <ClCompile Include="src\StdStringFromFormatString.cpp" />
     <ClCompile Include="src\String.cpp" />
-    <ClCompile Include="src\ToDisplayStr.cpp" />
+    <ClCompile Include="src\ToLogStr.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
