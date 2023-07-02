@@ -156,7 +156,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\TM_CommonCPP\Misc.h" />
     <ClInclude Include="include\TM_CommonCPP\Narrate.h" />
     <ClInclude Include="include\TM_CommonCPP\PlogFormatter.h" />
     <ClInclude Include="include\TM_CommonCPP\Properties.h" />
@@ -168,7 +167,6 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Misc.cpp" />
     <ClCompile Include="src\Narrate.cpp" />
     <ClCompile Include="src\PlogFormatter.cpp" />
     <ClCompile Include="src\StdStringFromFormatString.cpp" />
