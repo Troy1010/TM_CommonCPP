@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "TM_CommonCPP/ToDisplayStr.h"
 #include "TM_CommonCPP/String.h"
 
